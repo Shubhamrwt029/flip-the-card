@@ -2,6 +2,12 @@
 
 A Pokémon memory card matching game built with React Native, Expo, and Reanimated. Flip cards to find matching Pokémon pairs before time runs out!
 
+## Demo
+
+<p align="center">
+  <img src="./assets/demo/gameplay.gif" width="300" alt="Gameplay demo" />
+</p>
+
 ## Features
 
 - **3 Difficulty Levels** — Easy (4 cards / 60s), Medium (8 cards / 45s), Hard (12 cards / 30s)
