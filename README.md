@@ -1,50 +1,92 @@
-# Welcome to your Expo app 👋
+# 🃏 Flip the Cards
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A Pokémon memory card matching game built with React Native and Expo. Flip cards to find matching Pokémon pairs before time runs out!
 
-## Get started
+## Screenshots
 
-1. Install dependencies
+| Start Screen | Gameplay | Win Screen |
+|:---:|:---:|:---:|
+| 🎴 Select difficulty | 🔥 Match pairs with combos | ⭐ Star rating system |
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- **3 Difficulty Levels** — Easy (4 cards), Medium (8 cards), Hard (12 cards) with different time limits
+- **Combo System** — Earn bonus points for consecutive matches (100 + 50 per streak)
+- **Star Rating** — Get 1-3 stars based on your efficiency after each win
+- **Persistent Best Scores** — High scores saved per difficulty level (survives app restarts)
+- **Haptic Feedback** — Tactile vibrations on card flip, match, and mismatch
+- **Smooth Animations** — Card flip animations powered by React Native Reanimated
+- **Animated Background** — Subtle dark gradient animation
+- **Pokémon Sprites** — Random Pokémon from all generations fetched from PokeAPI
+- **Image Preloading** — Sprites are prefetched before gameplay starts
+- **Responsive Layout** — Cards adapt to screen size
 
-   ```bash
-   npx expo start
-   ```
+## Tech Stack
 
-In the output, you'll find options to open the app in a
+- **Framework:** React Native with Expo SDK 53
+- **Routing:** Expo Router (file-based)
+- **Animations:** React Native Reanimated
+- **Haptics:** expo-haptics
+- **Storage:** @react-native-async-storage/async-storage
+- **Language:** TypeScript
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Getting Started
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Prerequisites
 
-## Get a fresh project
+- Node.js 18+
+- Expo CLI
+- Android Studio / Xcode (for native builds)
 
-When you're ready, run:
+### Installation
 
 ```bash
-npm run reset-project
+# Clone the repo
+git clone https://github.com/Shubhamrwt029/flip-the-card.git
+cd flip-the-card
+
+# Install dependencies
+yarn install
+
+# Start the dev server
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Running on Device
 
-## Learn more
+```bash
+# Android
+npx expo run:android
 
-To learn more about developing your project with Expo, look at the following resources:
+# iOS
+npx expo run:ios
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## How to Play
 
-## Join the community
+1. Select a difficulty level (Easy / Medium / Hard)
+2. Tap **Start Game**
+3. Tap cards to flip them and reveal the Pokémon
+4. Match two identical Pokémon to score points
+5. Match consecutively for combo bonuses 🔥
+6. Complete all pairs before the timer runs out!
 
-Join our community of developers creating universal apps.
+## Project Structure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+app/
+├── _layout.tsx          # Root layout (Stack navigator)
+├── App.tsx              # Main game component
+├── (tabs)/
+│   ├── _layout.tsx      # Tab layout
+│   └── index.tsx        # Entry point (renders App)
+types/
+│   └── Game.tsx         # TypeScript interfaces
+assets/
+│   ├── fonts/
+│   └── images/
+```
+
+## License
+
+MIT
